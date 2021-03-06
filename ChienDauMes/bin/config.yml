@@ -1,0 +1,61 @@
+# Plugin ChienDauMes 
+# Được viết bởi Cortez Romeo
+# Chỉnh sửa văn bản tại message.yml
+# Xem dữ liệu người chơi tại database.yml
+
+# commands:
+# /toglichsu : Bật/tắt hiển thị lịch sử chiến dấu
+# /chiendaumes : Reload plugin
+# /chiso : Xem/reset chỉ số sát thương của người chơi hoặc toàn máy chủ
+
+# permissions:
+# Click vào file ChienDauMes.jar -> Open with WinRAR sau đó chọn plugin.yml
+# để xem permissions hoặc lên 4r và vào bài viết của mình để xem chi tiết
+
+
+# Phần này yêu cầu người chơi gây dmg/chịu dmg phải ở world có trong
+# danh sách worlds yêu cầu
+activeWorld:
+  enable: true
+  worlds: 
+  - 'world'
+  - 'world_nether'
+  - 'world_the_end'
+  - 'anotherworld'
+
+# Tối đa số thập phân có thể hiển thị sau dấu phẩy
+# Ví dụ mình đánh con bò mất 1 HP thì phần %damage% hiển thị ra sẽ là 1.00
+# Tùy chỉnh này không ảnh hưởng đến số Damage bạn gây ra
+# Nên để formatDamage là 2
+formatDamage: '2'
+
+database:   
+  # VỀ DỮ LIỆU THÌ NẾU BẠN THAY ĐỔI GIÁ TRỊ Ở database-enable THÌ TỐT NHẤT
+  # NÊN RESTART LẠI MÁY CHỦ HOÀN TOÀN, KHÔNG NÊN RELOAD PLUGIN!
+  enable: true
+  # Nếu dòng receiveDmgFromMonster có giá trị là true thì những sát thương do
+  # quái vật như đòn đánh của Zombie hay sát thương từ cung tên của Skeleton
+  # sẽ được tính vào số sát thương của máy chủ
+  receiveDmgFromMonster: true
+
+# Nếu bạn bật dòng này thì sau khi người chơi vào máy chủ sẽ tự động bật
+# lịch sử chiến dấu dù đã tắt ở lần chơi trước đó
+autoSet_enable: true
+
+# Dòng này chỉ có hiệu nghiệm khi phần "autoSet_enable" không phải là true
+# Nếu "autoSet_enable" có giá trị là false thì sau khi người chơi vào máy
+# chủ nhưng không bật lịch sử chiến dấu thì máy chủ sẽ thực hiện gửi message
+# nhắc nhở người chơi, bạn có thể tùy chỉnh văn bản đó ở message.yml
+alertPlayer_ifDisable: true
+
+# Người chơi cần bật lịch sử chiến dấu để thấy được thống kê sát thương
+# Chỉ hoạt động nếu database-enable có giá trị true
+staticsIndex:
+  enable: true
+  # Lấy đơn vị delay là giây (seconds)
+  delay: 120
+
+# Bật/tắt hiển thị dòng thông tin chiến đấu trên chat
+sendMessage:
+  enable: true
+  

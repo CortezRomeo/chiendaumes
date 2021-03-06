@@ -1,0 +1,19 @@
+#Đừng thay đổi tên plugin! (name) 
+name: ChienDauMes
+version: 1.0
+main: me.Cortez.Romeo.Main
+author: Cortez Romeo
+commands:
+  chiendaumes:
+    description: Main command
+  toglichsu:
+    descritpion: Toggle lichsu
+  chiso:
+permissions:
+  chiendaumes.admin:
+    children:
+      chiso.all: true
+      chiso.view: true         
+      chiso.reset: true
+      chiso.resetall: true
+                            
